@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang = "sl"> <!--Prevzet jezik na slovenscino-->
+    <head>
+        <meta charset = "UTF-8"> <!--Za zapis se uporablja UTF-8, je najpogosteje uporabljen-->
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0"> <!--prilagajanje strani glede na velikost zaslona-->
+        <meta name = "author" content = "Nina Krajnc"> <!--avtor spletne strani-->
+        <meta name = "keywords" content = "kriptografija, kriptografske metode, asimetrična kriptografija, simetrična kriptografija, poučevanje šifriranja, uporaba kriptografije"> <!--ključne besede za iskalnike--->
+        <meta name = "description" content = "Spletna stran o kriptografiji, njeni zgodovini, metodah, uporabi in kriptografiji v šolstvu."> <!--opis strani, ki ga prikaže iskalnik npr. Google-->
+        <title>Kriptografija</title> <!--naslov spletne strani, ki je na zavihku-->
+
+        <link rel="shortcut icon" href="../slike/key-black.svg"> <!--to doda ikona na zavihku(favicon)-->
+        <link rel="stylesheet" href="../css/styles.css"/> <!--povezava z dokumentom, kjer imam css kodo-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Ikone, ki jih bom uporabila za namige-->
+        
+        <!--Google font Montserrat-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><!--text font izvožen v datoteko-->
+        
+        <script src="../java/script.js" defer></script> <!--povezava z dokumentom, kjer je JavaScript koda-->
+    </head> 
+     
+
+    <body>
+        
+        <!--Navigacijski meni na vrhu spletne strani-->
+        <nav class = "navbar">
+            <div class = "navbar-content">
+                <ul class = "menu">    
+                    <img src="../slike/key-white.svg"> <!--Logo spletne strani v meniju-->
+            
+                    <li class = "item"><a href = "index.html">Domov</a></li>
+                    <li class = "item"><a href = "zgodovina.html">Zgodovina</a></li>
+                    
+                    <!--Spustni meni za metode-->
+                    <div class = "dropdown">
+                        <button class = "dropbtn">Kriptografske metode</button><!--gumb, ob kliku pokaže spustni meni za kriptografske metode-->
+                        <div class = "dropdown-content">
+                            <li class = "item"><a href = "substitucijske.html">Substitucijske metode</a></li>
+                            <li class = "item"><a href = "transpozicijske.html">Transpozicijske metode</a></li>
+                            <li class = "item"><a href = "sodobniAlgoritmi.html">Sodobni algoritmi</a></li>
+                        </div>
+                    </div>
+
+                    <li class = "item"> <a href = "uporaba.html">Uporaba</a></li>
+                    <li class = "item"> <a href = "solstvo.html">V šolstvu</a></li>
+                    <li class = "item"> <a href ="#" onclick="checkPassword(event)">Preizkusi se</a></li><!--V podstran Preizkusi se lahko prideš samo z geslom (geslo: čistopis), funkcija se nahaja v script.js-->
+                    <li class = "item"> <a href = "viri.html">Viri</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        
+            <h2>Viri</h2>
+
+            <ul class = "viri">
+                <li>Azhmukhamedov, I., Kuznetsova, V. in Vybornova, O. (2019). Training of cryptography as a way of developing system thinking at secondary school students. V J. Rugelj in M. Lapina (ur.), Proceedings of SLET-2019 – International Scientic Conference Innovative Approaches to the Application of Digital Technologies in Education and Researchh, Stavropol – Dombay, Russia, 20-23 May 2019: Vol–2494. <a  href="https://ceur-ws.org/Vol-2494/paper_6.pdf" target="_blank">https://ceur-ws.org/Vol-2494/paper_6.pdf</a>
+                </li>
+
+                <li>Bukovec, S. (2016). Poučevanje šifriranja v osnovni šoli [Diplomsko delo]. Repozitorij Univerze v Ljubljani. <a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?lang=slv&id=87192" target="_blank"> https://repozitorij.uni-lj.si/IzpisGradiva.php?lang=slv&id=87192</a>
+                </li>
+                <li>GeeksforGeeks. (19. 1. 2024). Transposition Cipher Techniques in Cryptography.<a href="https://www.geeksforgeeks.org/transposition-cipher-techniques-in-cryptography/" target="_blank"> https://www.geeksforgeeks.org/transposition-cipher-techniques-in-cryptography/</a></li>
+                
+                <li>IBM. (b. d.). What is cryptography?<a href="https://www.ibm.com/think/topics/cryptography" target="_blank"> https://www.ibm.com/think/topics/cryptography</a></li>
+                <li>IBM. (17. 1. 2024). Cryptography use cases: From secure communication to data security.<a href="https://www.ibm.com/think/topics/cryptography-use-cases" target="_blank">https://www.ibm.com/think/topics/cryptography-use-cases</a>
+                </li>
+                <li>Kumar Sharma, D., idr. (2022). A review on various cryptographic techniques & algorithms. V A. Kumar in Y. Shrivastava (ur.), Materials Today: Proceedings 51 (str. 104–109). 1st International Conference on Computations in Materials and Applied Engineering – 2021. <a href ="https://doi.org/10.1016/j.matpr.2021.04.583" target="_blank">https://doi.org/10.1016/j.matpr.2021.04.583</a>
+                </li>
+                <li>
+                    Liu, D., Caceres, M., Robichaux, T., Forte, D. V.,  Seagren, E. S., Ganger, D. L., Smith, B., Jayawickrama, W., Stokes, C. in Kanclirz, J. (2009). Chapter 3 – An introduction to cryptography. V Next Generation SSH2 Implementation (str. 41–64). <a href="https://doi.org/10.1016/B978-1-59749-283-6.00003-9" target="_blank">https://doi.org/10.1016/B978-1-59749-283-6.00003-9</a> 
+                </li>
+                <li>
+                    McDonald, N. G. (n. d.). Past, present, and future methods od cryptography and data encryption [Reserch Review]. <a href="https://docslib.org/doc/12882690/past-present-and-future-methods-of-cryptography-and-data-encryption" target="_blank">https://docslib.org/doc/12882690/past-present-and-future-methods-of-cryptography-and-data-encryption</a>
+                </li>
+                <li>
+                    Percival, N., Narain, S. in Seungeun Lee, C. (2023). Modern Cryptography Education of Middle School Students: A Review of Current Works. V The 24th Annual Conference on Information Technology Education (SIGITE ’23), October 11–14, 2023, Marietta, GA, USA. ACM, New York, NY, USA,(33-38). <a href="https://doi.org/10.1145/3585059.3611428" target="_blank">https://doi.org/10.1145/3585059.3611428</a> 
+                </li>
+                <li>
+                    Sarkar, S. (4. 7. 2020). Know about the Caesar Cipher, one of the earliest known and simplest ciphers!!! IBM. <a href="https://community.ibm.com/community/user/ibmz-and-linuxone/blogs/subhasish-sarkar1/2020/07/04/caesar-cipher?communityKey=8bcc5745-f7d5-43e3-a7ef-a4801c68c752" target="_blank">https://community.ibm.com/community/user/ibmz-and-linuxone/blogs/subhasish-sarkar1/2020/07/04/caesar-cipher?communityKey=8bcc5745-f7d5-43e3-a7ef-a4801c68c752</a>
+                </li>
+                <li>
+                    Schneider J. (5. 1. 2024). A brief history of cryptography: Sending secret messages throughout time. IBM. <a href="https://www.ibm.com/think/topics/cryptography-history" target="_blank">https://www.ibm.com/think/topics/cryptography-history</a>
+                </li>
+                <li>
+                    Sidhu, A. (2023). Analyzing Modern Cryptography Techniques and  Reviewing their Timeline (2023). ResearchGate. <a href="https://www.researchgate.net/publication/369013746_Analyzing_Modern_Cryptography_Techniques_and_Reviewing_their_Timeline_2023" target="_blank">https://www.researchgate.net/publication/369013746_Analyzing_Modern_Cryptography_Techniques_and_Reviewing_their_Timeline_2023</a>
+                </li>
+                <li>
+                    Solanki, P. in Uchil, S. (2023). Real Life Applications of Cryptography. V International Journal of Scientific Research and Engineering Development - 6 (6). (str. 863–868). <a href="https://ijsred.com/volume6/issue6/IJSRED-V6I6P108.pdf" target="_blank">https://ijsred.com/volume6/issue6/IJSRED-V6I6P108.pdf</a> 
+                </li>
+                <li>
+                    Učni načrt. Gimnazija. Informatika. (2008). Ministrstvo za šolstvo in šport: Zavod RS za šolstvo. <a href="https://eportal.mss.edus.si/msswww/programi2018/programi/media/pdf/un_gimnazija/un_informatika_gimn.pdf" target="_blank">https://eportal.mss.edus.si/msswww/programi2018/programi/media/pdf/un_gimnazija/un_informatika_gimn.pdf</a>
+                </li>
+                <li>
+                    Učni načrt. Program osnovna šola. Računalništvo. (2013). Ministrstvo za izobraževanje, znanost in šport: Zavod RS za šolstvo. <a href="https://www.gov.si/assets/ministrstva/MIZS/Dokumenti/Osnovna-sola/Ucni-nacrti/izbirni/Neobvezni/Racunalnistvo_izbirni_neobvezni.pdf" target="_blank">https://www.gov.si/assets/ministrstva/MIZS/Dokumenti/Osnovna-sola/Ucni-nacrti/izbirni/Neobvezni/Racunalnistvo_izbirni_neobvezni.pdf</a>
+                </li>
+            </ul>
+    
+            <footer>
+                <p>© 2025 Nina Krajnc. Vse pravice pridržane.</p>
+                <small>Licence slik so dostopne s klikom na posamezno sliko.</small>
+            </footer>
+
+    </body>
