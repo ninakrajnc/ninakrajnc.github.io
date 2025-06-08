@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang = "sl"> <!--Prevzet jezik na slovenscino-->
+    <head>
+        <meta charset = "UTF-8"> <!--Za zapis se uporablja UTF-8, je najpogosteje uporabljen-->
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0"> <!--prilagajanje strani glede na velikost zaslona-->
+        <meta name = "author" content = "Nina Krajnc"> <!--avtor spletne strani-->
+        <meta name = "keywords" content = "kriptografija, kriptografske metode, asimetrična kriptografija, simetrična kriptografija, poučevanje šifriranja, uporaba kriptografije"> <!--ključne besede za iskalnike--->
+        <meta name = "description" content = "Spletna stran o kriptografiji, njeni zgodovini, metodah, uporabi in kriptografiji v šolstvu."> <!--opis strani, ki ga prikaže iskalnik npr. Google-->
+        <title>Kriptografija</title> <!--naslov spletne strani, ki je na zavihku-->
+
+        <link rel="shortcut icon" href="../slike/key-black.svg"> <!--to doda ikona na zavihku(favicon)-->
+        <link rel="stylesheet" href="../css/styles.css"/> <!--povezava z dokumentom, kjer imam css kodo-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Ikone, ki jih bom uporabila za namige-->
+        
+        <!--Google font Montserrat-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><!--text font izvožen v datoteko-->
+        
+        <script src="../java/script.js" defer></script> <!--povezava z dokumentom, kjer je JavaScript koda-->
+    </head> 
+     
+    <body>
+        
+        <div class = "header">
+            
+        </div>
+
+        <!--Navigacijski meni na vrhu spletne strani-->
+        <nav class = "navbar">
+            <div class = "navbar-content">
+                <ul class = "menu">    
+                    <img src="../slike/key-white.svg" alt = "Logo kriptografija"> <!--Logo spletne strani v meniju-->
+            
+                    <li class = "item"><a href = "index.html">Domov</a></li>
+                    <li class = "item"><a href = "zgodovina.html">Zgodovina</a></li>
+                    
+                    <!--Spustni meni za metode-->
+                    <div class = "dropdown">
+                        <button class = "dropbtn">Kriptografske metode</button><!--gumb, ob kliku pokaže spustni meni za kriptografske metode-->
+                        <div class = "dropdown-content">
+                            <li class = "item"><a href = "substitucijske.html">Substitucijske metode</a></li>
+                            <li class = "item"><a href = "transpozicijske.html">Transpozicijske metode</a></li>
+                            <li class = "item"><a href = "sodobniAlgoritmi.html">Sodobni algoritmi</a></li>
+                        </div>
+                    </div>
+
+                    <li class = "item"> <a href = "uporaba.html">Uporaba</a></li>
+                    <li class = "item"> <a href = "solstvo.html">V šolstvu</a></li>
+                    <li class = "item"> <a href ="#" onclick="checkPassword(event)">Preizkusi se</a></li><!--V podstran Preizkusi se lahko prideš samo z geslom (geslo: čistopis), funkcija se nahaja v script.js-->
+                    <li class = "item"> <a href = "viri.html">Viri</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!--besedilo-->
+        <div class = "besedilo">
+
+            <!--naloga za dopolnjevanje besedila z izbiranjem pravilnih besed-->
+            <p>
+                NALOGA: Preizkusi svoje znanje osnovnih kriptografskih pojmov in metod. 
+                Izberi pravilne odgovore v kvizu in preveri, koliko informacij si uspel/a osvojiti na tej spletni strani.
+            </p>
+
+            <!--naloga z obrobo-->
+            <div class = "kriptacija">
+                <p>
+                    Mojca želi poslati sporočilo Davidu. Sporočilo, ki ga pošlje imenujemo 
+                    
+                    <!--prva izbira, pravilen odgovor: čistopis-->
+                    <select class = "kviz" id = "dropdown1">
+                        <!--opcije za izbiro-->
+                        <option value="">--izberi--</option>
+                        <option value="kriptogram">kriptogram</option>
+                        <option value="čistopis">čistopis</option>
+                        <option value="ključ">ključ</option>
+                        <option value="algoritem">algoritem</option>
+                    </select>
+                    , ki predstavlja berljivo, izvirno besedilo. Da prepreči, da bi napadalec prebral sporočilo, ga pretvori v 
+                    
+                    <!--druga izbira, pravilen odgovor: kriptogram-->
+                    <select class = "kviz" id = "dropdown2">
+                        <!--opcije za izbiro-->
+                        <option value="">--izberi--</option>
+                        <option value="kriptogram">kriptogram</option>
+                        <option value="čistopis">čistopis</option>
+                        <option value="ključ">ključ</option>
+                        <option value="algoritem">algoritem</option>
+                    </select>
+                    , kar predstavlja nerazumljivo obliko sporočila. Pretvorba čistopisa v kriptogram poteka s pomočjo 
+                    
+                    <!--tretja izbira, pravilen odgovor: enkripcijskega algoritma-->
+                    <select class = "kviz" id = "dropdown3">
+                        <!--opcije za izbiro-->
+                        <option value="">--izberi--</option>
+                        <option value="enkripcijskega algoritma">enkripcijskega algoritma</option>
+                        <option value="dekripcijskega algoritma">dekripcijskega algoritma</option>
+                        <option value="dekripcijskega ključa">dekripcijskega ključa</option>
+                    </select> 
+                    in enkripcijskega ključa. Za razvozlanje sporočila David potrebuje ustrezen 
+                    
+                    <!--cetrta izbira, pravilen odgovor: dekripcijski ključ-->
+                    <select class = "kviz" id = "dropdown4">
+                        <!--opcije za izbiro-->
+                        <option value="">--izberi--</option>
+                        <option value="dekripcijski ključ">dekripcijski ključ</option>
+                        <option value="enkripcijski ključ">enkripcijski ključ</option>
+                        <option value="kriptografski ključ">kriptografski ključ</option>
+                    </select>
+
+                    <br><br>
+
+                    Vse kriptografske metode temeljio na dveh glavnih principih: <b>substituciji</b> in <b>transpoziciji</b>. Med substitucijske metode spada 
+                    
+                    <!--peta izbira, pravilen odgovor: Cearjev kriptogram-->
+                    <select class = "kviz" id = "dropdown5">
+                        <!--opcije za izbiro-->
+                        <option value="">--izberi--</option>
+                        <option value="cik-cak kriptogram">cik-cak kriptogram</option>
+                        <option value="stolpični kriptogram">stolpični kriptogram</option>
+                        <option value="cezarjev kriptogram">Cezarjev kriptogram</option>
+                        <option value="DES">DES</option>
+                    </select>
+                    , medtem ko med transpozicijske metode sodi
+                    
+                    <!--šesta izbira, pravilen odgovor: cik-cak kriptogram-->
+                    <select class = "kviz" id = "dropdown6">
+                        <!--opcije za izbiro-->
+                        <option value="">--izberi--</option>
+                        <option value="vigenerjev kriptogram">vigenerjev kriptogram</option>
+                        <option value="aes">AES</option>
+                        <option value="cezarjev kriptogram">cezarjev kriptogram</option>
+                        <option value="cik-cak kriptogram">cik-cak kriptogram</option>
+                    </select>
+                </p>
+                <br>
+                
+                <!--gumb, ki ob kliku s pomočjo JavaScripta preveri pravilnost izbire odgovorov-->
+                <button class = "mali-gumb" onclick="preveriOdgovore()">Preveri odgovore</button>
+                
+            </div>
+
+            
+            <!--Orodje, ki pomaga zakodirat besedilo s Cezarjevim kriptogramom-->
+            <p>
+                <b>Zdaj si ti na vrsti, da postaneš kriptograf!</b>
+                <br><br>
+                V spodnjem orodju lahko zakodiraš besedo ali stavek s pomočjo <b>Cezarjeve šifre</b>. Izberi <b>zamik</b> (ključ), vpiši sporočilo 
+                in takoj boš videl/a, kako se spremeni v nerazumljiv zapis.
+                <br>
+                Uporabi zakodirano sporočio, da svojemu prijatelju pošlješ skrivno misel. Ampak pazi! 
+                Brez ključa ga ne bo mogel razvozlati.
+            </p>
+
+            <!--z obrobo-->
+            <div class="kriptacija">
+
+                <!--oznaka za polje, kjer uporabnik vnese besedilo, ki ga želi kriptitrat-->
+                <label for="text">Vpiši besedilo:</label>
+                <br><br>
+
+                <!--polje, kamor vpiše besedilo, 3 je število vidnih vrstic, placeholder prikaže (sivo) besedilo znotraj polja, preden uporabnik kaj vpiše-->
+                <textarea id ="text" rows="3" placeholder="Vpiši svoje skrivno sporočilo..."></textarea>
+                
+                <!--oznaka za polje, kjer uporabnik izbere ključ za zamikanje-->
+                <label for="key">Izberi ključ (zamikanje):</label>
+
+                <!--polje za vnos zamika, dovoljene vrednosti od 1 do 25, začetna vrednost nastavljena na 3-->
+                <input type="number" id="key" value="3" min="1" max="25">
+                
+                <!--gumb, ki kljiče javascript funkcijo, ki vnešeno besedilo zakodira-->
+                <button type= "button" class = "mali-gumb" onclick="kriptiraj()">Zakodiraj</button>
+
+                <!--oznaka za prikaz zakodiranega besedila-->
+                <label for="kriptogram">Zakodirano besedilo:</label>
+                
+                <!--odsek, kjer se prikaže rezultat kriptiranja-->
+                <p id="kriptogram"></p>
+            </div>
+
+        </div>
+
+        
+       
+        <!--Noga spletne strani-->
+        <footer>
+            <p>© 2025 Nina Krajnc. Vse pravice pridržane.</p>
+            <small>Licence slik so dostopne s klikom na posamezno sliko.</small>
+        </footer>
+
+    </body>
+</html>
