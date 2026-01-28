@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang = "sl"> <!--Prevzet jezik na slovenscino-->
+    <head>
+        <meta charset = "UTF-8"> <!--Za zapis se uporablja UTF-8, je najpogosteje uporabljen-->
+        <meta name="viewport" content = "width=device-width, initial-scale=1.0"> <!--prilagajanje strani glede na velikost zaslona-->
+        <meta name = "author" content = "Nina Krajnc"> <!--avtor spletne strani-->
+        <meta name = "keywords" content = "kriptografija, kriptografske metode, asimetrična kriptografija, simetrična kriptografija, poučevanje šifriranja, uporaba kriptografije"> <!--ključne besede za iskalnike--->
+        <meta name = "description" content = "Spletna stran o kriptografiji, njeni zgodovini, metodah, uporabi in kriptografiji v šolstvu."> <!--opis strani, ki ga prikaže iskalnik npr. Google-->
+        <title>Kriptografija</title> <!--naslov spletne strani, ki je na zavihku-->
+
+        <link rel="shortcut icon" href="../slike/key-black.svg"> <!--to doda ikona na zavihku(favicon)-->
+        <link rel="stylesheet" href="../css/styles.css"/> <!--povezava z dokumentom, kjer imam css kodo-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Ikone, ki jih bom uporabila za namige-->
+        
+        <!--Google font Montserrat-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"><!--text font izvožen v datoteko-->
+        
+        <script src="../java/script.js" defer></script> <!--povezava z dokumentom, kjer je JavaScript koda-->
+    </head> 
+     
+    <body>
+        <!--Navigacijski meni na vrhu spletne strani-->
+        <nav class = "navbar">
+            <div class = "navbar-content">
+                <ul class = "menu">    
+                    <img src="../slike/key-white.svg"> <!--Logo spletne strani v meniju-->
+            
+                    <li class = "item"><a href = "index.html">Domov</a></li>
+                    <li class = "item"><a href = "zgodovina.html">Zgodovina</a></li>
+                    
+                    <!--Spustni meni za metode-->
+                    <div class = "dropdown">
+                        <button class = "dropbtn">Kriptografske metode</button><!--gumb, ob kliku pokaže spustni meni za kriptografske metode-->
+                        <div class = "dropdown-content">
+                            <li class = "item"><a href = "substitucijske.html">Substitucijske metode</a></li>
+                            <li class = "item"><a href = "transpozicijske.html">Transpozicijske metode</a></li>
+                            <li class = "item"><a href = "sodobniAlgoritmi.html">Sodobni algoritmi</a></li>
+                        </div>
+                    </div>
+
+                    <li class = "item"> <a href = "uporaba.html">Uporaba</a></li>
+                    <li class = "item"> <a href = "solstvo.html">V šolstvu</a></li>
+                    <li class = "item"> <a href ="#" onclick="checkPassword(event)">Preizkusi se</a></li><!--V podstran Preizkusi se lahko prideš samo z geslom (geslo: čistopis), funkcija se nahaja v script.js-->
+                    <li class = "item"> <a href = "viri.html">Viri</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!--Glavni naslov podstrani-->
+        <div class = "header">
+            <h1>Transpozicijske metode</h1>
+        </div>
+
+        <!--Glavna vsebina-->
+        <div class = "besedilo">
+            <p>
+                Transpozicijske metode so osnovne kriptografske tehnike, pri katerih ne zamenjujemo znake z drugimi, temveč <b>spremenimo 
+                njihov vrstni red</b>. Ključ določa, kako bomo črke premestili, torej gre za <b>permutacijo položajev črk</b>.
+                Te metode ohranjajo pogostost črk, kar jih naredi težje razpoznavne s frekvenčno analizo. Daljša sporočila in daljši ključi dodatno 
+                otežijo razbijanje, saj povečajo število možnih permutacij. Kljub temu jih <b>sodobni računalniki hitro dešifrirajo</b>, 
+                zato danes niso več dovolj varne. Ostajajo pa zgodovinsko pomembne in so še vedno <b>del nekaterih sodobnih kriptografskih algoritmov</b>, 
+                kot je AES.
+
+                <!--citiranje besedila-->
+                <span class = "citiranje">(Sidhu, 2023; GeeksforGeeks, 2024)</span>
+            </p>
+
+            <!--Rail Fence kriptogram-->
+            <h2>Rail Fence oz. cik-cak kriptogram</h2>
+
+            <p>
+                Gre za najpreprostejšo transpozicijsko metodo. Kriptiranje poteka tako, da črke v besedilu zapišemo v cik-cak vzorcu, glede na število vrstic 
+                (te so določene s ključem). Kriptogram dobimo tako, da črke preberemo po vrsticah.<br><br>
+                Če imamo čistopis: <b>"SKRIVNOSTEN"</b> in ključ <b>"3"</b>, bo postopek naslednji:
+            </p>
+
+            <!--Prikaz šifriranja s sliko, ob kliku nanjo se pokaže licenca-->
+            <div class = "z-misko majhna-slika"><img src ="../slike/cikcak-primer.svg" alt="Primer kriptiranja s cik-cak kriptogramom." onclick="showText(this)"></div>
+            <div class = "hide-na-belo"><a href="https://creativecommons.org">Potek cik-cak kriptiranja</a> © 2025 by Nina Krajnc is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div>
+            
+
+            <p>
+                Kriptogram dobimo, da po vrsticah preberemo znake. Naš kriptogram: <b>"SVTKINSERON"</b>.
+            </p>
+            <!--citiranje besedila-->
+            <p><span class = "citiranje">(GeeksforGeeks, 2024)</span></p>
+        
+            <!--Stolpični kriptogram-->
+            <h2>Stolpični kriptogram</h2>
+
+            <p>
+                Pri tej metodi za ključ izberemo besedo ali besedno zvezo, ki ne vsebuje ponovljenih črk. Vsebino čistopisa nato zapišemo v obliki tabele, 
+                kjer vsaka vrstica vsebuje toliko črk, kolikor jih ima izbran ključ. Ključ uporabimo tako, da glede na abecedno urejenost črk v njem 
+                preuredimo vrstni red stolpcev. Kriptogram nastane z branjem črk po stolpcih v določenem vrstnem redu.
+            </p>
+
+            <!--prikaz šifriranja s sliko, ob kliku se izpiše licenca-->
+            <div class = "z-misko zelo-majhna-slika"><img src="../slike/stolpicni-primer.svg" alt="Primer kriptiranja s stolpičnim kriptogramom." onclick="showText(this)"></div>
+            <div class = "hide-na-belo"><a href="https://creativecommons.org">Potek stolpičnega kriptiranja</a> © 2025 by Nina Krajnc is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div>
+
+            
+            <p>
+                V našem primeru smo za ključ uporabili besedo <b>"KLJUČ"</b>, sporočilo, ki ga želimo kriptirati je: <b>"SKRIVNO SPOROČILO"</b>. Sporočilo razporedimo po vrsticah 
+                tabele, kjer ima vsaka vrstica toliko znakov, kolikor črk je v ključu (5). Presledke v sporočilu in mankajoča mesta na koncu tabele prikažemo kot prazne kvadratke. 
+                Črke v ključu razvrstimo po abecedi (Č, J, K, L, U), s tem določimo vrstni red, v katerem preberemo stolpce. Kriptogram, ki ga dobimo je sledeč: <b>"VPI R O SNOLKOROISČ"</b>.
+            </p>
+            <!--citiranje besedila-->
+            <p><span class = "citiranje">(GeeksforGeeks, 2024)</span></p>
+
+            <!--Dvojni stolpični kriptogram-->
+            <h2>Dvojni stolpični kriptogram</h2>
+
+            <p>
+                Gre za izboljšano verzijo stolpičnega kriptograma. Njena glavna prednost je, da se kriptiranje izvede dvakrat, kar znatno oteži dekriptiranje. 
+                Postopek je podoben kot pri stolpičnem kriptogramu, le da kriptogram iz prve transpozicije postane vhod za drugo transpozicijo. Uporablja lahko 
+                isti ali dva različna ključa.
+            </p>
+
+            <!--prikaz šifriranja s sliko, ob kliku se izpiše licenca-->
+            <div class = "z-misko zelo-majhna-slika"><img src="../slike/dvojni-stolpični-primer.svg" alt="Primer kriptiranja z dvojnim stolpičnim kriptogramom." onclick="showText(this)"></div>
+            <div class = "hide-na-belo"><a href="https://creativecommons.org">Potek dvojno stolpičnega kriptiranja</a> © 2025 by Nina Krajnc is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div>
+
+            <p>
+                V našem primeru bomo uporabili isti ključ kot prej <b>"KLJUČ</b>. Vhod v drugo šifriranje bo kriptogram, ki smo ga dobili pri prvem stolpičnem kriptiranju: 
+                <b>"VPI R O SNOLKOROISČ"</b>. Tudi tega razporedimo v tabelo po enakem postopku, s praznimi kvadratki za presledke in mankajoča mesta, ter znova preberemo stolpce v abecednem 
+                vrstnem redu črk ključa (Č, J, K, L, U). Končni kriptogram, ki ga dobimo po drugem krogu kriptiranja, je <b>"RNR I KSV OOPOLI SOČ"</b>. 
+            </p>
+            <!--citiranje besedila-->
+            <p><span class = "citiranje">(GeeksforGeeks, 2024)</span></p>
+
+            <!--primerjava subsitucijskih in transpozicijskih metod, v obliki tabele-->
+            <h2>Primerjava substitucijskih in transpozicijskih metod:</h2>
+
+            <!--tabela-->
+            <table>
+                <tr>
+                    <th>SUBSTITUCIJSKE METODE</th>
+                    <th>TRANSPOZICIJSKE METODE</th>
+                </tr>
+                
+                <tr>
+                    <td>Znaki v čistopisu se nadomestijo z drugimi znaki, številkami ali simboli.</td>
+                    <td>Znaki v čistopisu se preuredijo glede na položaj.</td>
+                </tr>
+
+                <tr>
+                    <td>Znak se spremeni, položaj ostane enak.</td>
+                    <td>Znak se ne spremeni, spremeni se le njegov položaj.</td>
+                </tr>
+                
+                <tr>
+                    <td>Ranljiva na frekvenčne napade.</td>
+                    <td>Manj ranljiva na frekvenčne napade</td>
+                </tr>
+                
+                <tr>
+                    <td>Primeri: Cezarjev kriptogram, Vigenerjev kriptogram.</td>
+                    <td>Primeri: Cik-cak kriptogram, Stolpični kriptogram, Dvojni stolpični kriptogram.</td>
+                </tr>
+                
+                <tr>
+                    <td>Preprosta za razumevanje in uporabo, primerna za osnovne aplikacije.</td>
+                    <td>Težja za implementacijo, varnejša za določene primere uporabe.</td>
+                </tr>
+        </table>
+
+        <!--citiranje besedila-->
+        <p><span class = "citiranje">(Sharma, 2022)</span></p>
+        
+    </div>
+     
+    <!--Noga spletne strani-->
+    <footer>
+        <p>© 2025 Nina Krajnc. Vse pravice pridržane.</p>
+        <small>Licence slik so dostopne s klikom na posamezno sliko.</small>
+    </footer>
+
+    </body>
+</html>

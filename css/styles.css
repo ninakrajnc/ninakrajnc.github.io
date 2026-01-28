@@ -1,0 +1,437 @@
+/*Osnovni stil za telo*/
+body{
+  background-color: #f1f1f1; /*svetlo siva podlaga*/
+  margin: 0; /*odstrani privzeti zunanji rob*/
+  font-family: "Montserrat", serif; /*Nastavi serifno pidavo*/
+}
+
+/*Stil za odstavke*/
+p {
+  font-weight: 500; /*debelina pisave*/
+  font-style: normal; /*navadna pisava*/
+  max-width: 1000px; /*maksimalna dolžina odstavkov*/
+}
+
+/*Naslovni del spletne strani*/
+.header{
+  padding: 20px;
+  margin-top: 50px; /*odmik od vrha*/
+  background-color: #01c389; /*modro-zeleno ozadje*/
+  text-align: center; /*poravnava besedila na sredino*/
+  width: 100%; /*100% širina od starša*/
+  color: #f1f1f1; /*svetla barva pisave*/
+}
+
+.header h1{
+  color: #f1f1f1;
+  text-align: center; /*poravnava na sredino*/
+  padding-top: 20px; 
+  font-size: 50px; /*velik naslov*/
+}
+
+/*Znotraj headerja različni odstavki*/
+.header .izziv,
+.header .opis {
+  margin: 0 auto; /*na sredino, zgornji in spodnji rob 0*/
+  padding-top: 10px;
+}
+
+.opis {
+  font-size: 24px; /*večja velikost pisave za opis*/
+}
+
+/*stiliranje gumbov*/
+button {
+  background-color: #000117;
+  color: #f1f1f1;
+  margin: 20px 0;
+  border: none; /*brez obrobe*/
+  padding: 10px 32px; /*odmaknjenost od robov od znotraj*/
+  display: block; /*zasede celotno sirino*/
+  border-radius: 8px; /*zaobljeni robovi*/
+  width: 100%;  /*širina gumba 100% širine starša*/
+}
+
+/*Navigacijski meni, fiksiran na vrhu*/
+.navbar{
+  top:0; /*postavitev na vrh strani*/
+  background-color: #000117;
+  padding: 10px 0;
+  width: 100%;
+  z-index: 1000; /*da je vedno na vrhu*/
+  position: fixed; /*fiksira položaj, tudi ob scrollanju je na vrhu*/
+}
+
+/*vsebina navigacijskega menija*/
+.navbar-content {
+  display: flex;
+  justify-content: space-evenly; /*enakomerni razliki med elementi*/
+}
+/*logo v meniju*/
+.navbar img{
+  max-width: 50px;
+}
+/*meni kot neurejen seznam*/
+.menu {
+  list-style: none; /*brez privzetih točk pri seznamu*/
+  display: flex;/*elementi postavljeni v vrsto*/
+  margin: 0;
+  gap: 20px; /*razmik med elementi*/
+}
+
+/*povezave in gumbi v navigacijskem meniju*/
+.menu a, .dropbtn {
+  font-family: "Montserrat", serif;
+  padding: 14px 16px;
+  display: flex;
+  font-size: 15px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/*dropdown vsebina pri kriptografskih metodah*/
+.dropdown-content {
+  display: none; /*skrito*/
+  position: absolute; 
+  background-color:#000117;
+  min-width: 230px;
+  color: #f1f1f1;
+}
+/*prikaz vsebine ob hoverju*/
+.dropdown:hover .dropdown-content {
+  display: block; /*prikaže vsebino*/
+}
+/*stil povezav v vseh stanjih*/
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #f1f1f1;
+  text-decoration: none; /*brez podčrtaja*/
+}
+/*besedilo spletne strani*/
+.besedilo p, h1, h2 {
+  color:#000117;
+  padding-top: 40px;
+  margin: 0 auto; /*besedilo postavi v sredino, ne glede na velikost zaslona */
+  max-width: 1000px;
+}
+/*slike znotraj besedila*/
+.besedilo img {
+  display:block;
+  margin: 0 auto; /*centriranje slike*/
+  max-width: 1000px; /*maksimalna širina slike*/
+  width: 60%; /*širina slike je 60% starša*/
+  padding: 20px 0;
+}
+/*kartice*/
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));/*stolpci se prilagajajo velikosti*/
+  gap: 30px; /*razmik med karticami*/
+  justify-content: center;
+  max-width: 1000px;
+  margin: 30px auto 40px;
+}
+/*posamezna kartica*/
+.card {
+  border: 3px solid #01c389;
+  display: flex;
+  flex-direction: column;/*vsebina je v stolpcu*/
+  color:#f1f1f1;
+  text-align: center;
+}
+
+/*zgornji del kartice*/
+.card-top {
+  background-color: #01c389;
+  color: #f1f1f1;
+  padding: 20px; 
+  text-align: center;
+}
+
+/*slika v zgornjem delu kartice*/
+.card-top img {
+  width: 50px;
+  height: 50px;
+}
+
+/*poševna pisava v zgornjem delu kartice*/
+.card-top p {
+  font-style: italic;
+}
+
+/*spodnji del kartice*/
+/*ker je samo <p> v card-bottom lahko kar tu stiliram text*/
+.card-bottom {
+  background-color: #f1f1f1;
+  color: #000117;
+  padding: 20px;
+  flex: 1; /*razteza da zapolni razpoložljiv prostor*/
+  line-height: 1.4; /*višina vrstice*/
+  text-align: left;
+}
+
+/*skriti namigi na vrhu uvodne strani*/
+.hint {
+  display: none; /*element skrit*/
+  color: #f1f1f1;
+  max-width: 600px;
+  text-align: center;
+}
+
+/*tabela za namige*/
+.hint-box {
+  width: 100%;
+  border-collapse: collapse; /*združi robove celic*/
+  table-layout: fixed;
+}
+/*celice v tabeli za namige*/
+.hint-box td {
+  vertical-align: top;
+  width: 50%;
+}
+
+/*osnovni stil tabel*/
+table {
+  border-collapse: collapse; /*združi robove*/
+  margin: 20px auto;
+  border: 3px solid #01c389;
+  max-width: 1000px;
+}
+
+/*celice tabele*/
+th,td {
+  text-align: left;
+  padding: 16px 20px;
+  border: 3px solid #01c389;
+}
+
+/*naslovi stolpcev*/
+th {
+  background-color: #01c389;
+  color:#f1f1f1;
+  text-align: center;
+}
+
+/*skrit zapis licence slik- na temnem ozadju pokaže*/
+.hide {
+  display: none; /*element skrit*/
+  color: #f1f1f1;
+}
+
+/*skrit zapis licenc, pokaže v zelenm kvadratku na svetlem ozadju*/
+.hide-na-belo{
+  display: none; /*skrit*/
+  color:#f1f1f1;
+  background-color: #01c389;
+  padding: 15px;
+  max-width: 600px;
+  margin: 15px auto 0 auto;
+  border-radius: 8px; /*zaobljeni robovi*/
+  text-align: center;
+}
+
+/*timeline na strani zgodovine*/
+.timeline-section{
+  padding-top: 100px;
+}
+
+/*časovnica*/
+.timeline {
+  margin: 0 auto;/*centirirano*/
+  border-left: 4px solid #01c389;/*časovnica kot črna ne levi strani*/
+  padding-left: 30px;
+  max-width: 1000px;
+  transform: translateX(250px);/*premik časovnice za 250px desno*/
+}
+
+/*datum v časovnici*/
+.date {
+  position: absolute;
+  left: -200px; /*200px levo od starša*/
+  color: #01c389;
+  top: 50%; /*vertikalno na sredino*/
+}
+
+/*dogodek v časovnici*/
+.event {
+  position: relative;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center; /*vertikalno centriranje*/
+}
+
+/*ovoj za ikone*/
+.icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /*krožen okvir*/
+  background: #f1f1f1;
+  border: 3px solid #01c389; /*rob*/
+  margin-right: 20px;
+  display: flex;
+  align-items: center; /*vertikalno centriranje*/
+  justify-content: center; /*horizontalno centriranje*/
+}
+
+/*ikona-slike dogodkov*/
+.icon {
+  width: 70%;
+  height: 70%;
+}
+
+/*opis dogodka*/
+.event .content {
+  background-color: #01c389;
+  padding: 20px;
+  border-radius: 8px;
+  width: 500px;
+  color: #f1f1f1;
+}
+
+/*odstavki znotraj opisa dokodka*/
+.event .content p {
+  margin: 5px 0 0;  
+}
+
+/*Noga spletne strani*/
+footer {
+  background-color: #01c389;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+
+}
+
+/*odstavki v nogi*/
+footer p {
+  margin: 0 auto;
+}
+
+/*seznam virov*/
+.viri {
+  list-style-type: none; /*brez oznak*/
+  margin: 0 auto; /*centrirano*/
+  padding: 40px 20px;
+  max-width: 1000px;
+}
+
+/*povezave pri virih*/
+.viri a {
+  color: #000117;
+  text-align: center;
+  max-width: 1000px;
+  word-break: break-word;/*če beseda predolga se prelomi, če je potrebno (linki so eni zelo dolgi)*/
+}
+
+/*hover na linkih pri virih*/
+.viri a:hover{
+  text-decoration: underline; /*ko z miško čez link, se podčrta*/
+}
+
+/*elementi v seznamu virov*/
+.viri li {
+  margin-bottom: 1em; /*razmik spodaj*/
+  text-align: left; /*poravnano na levo*/
+  text-indent: -1.5cm; /*zamik prve vrstice na levo*/
+  padding-left: 1.5cm; /*ostale vrstice levo poravnane*/
+}
+
+/*stil za urejene sezname*/
+ol {
+  margin: 0 auto;
+  font-weight: 500;
+  max-width: 1000px;
+  padding-top: 10px;
+}
+
+/*za vse vrste seznamov*/
+li {
+  color: #000117;
+  margin-bottom: 8px;
+}
+
+/*poudarjene besede se pobarvajo*/
+b {
+  color: #01c389;
+}
+
+/*seznam s pikicami, privzet seznam je ostevilcen*/
+.s-pikico{
+  list-style-type: circle;
+}
+
+/*povezave pri strani v solstvu*/
+.linki a {
+  color: #000117;
+}
+
+/*ob hooverju te povezave*/
+.linki a:hover{
+  color:#01c389
+}
+
+/*majhne slike*/
+.majhna-slika {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/*zelo majhne slike*/
+.zelo-majhna-slika{
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/*srednje slike*/
+.srednja-slika {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/*stil za citate*/
+.citiranje{
+  display: block;
+  text-align: right;/*poravnan na desno*/
+  margin-bottom: 10px;
+}
+
+/*obrobljeni deli pri razdelku preizkusi se*/
+.kriptacija{
+  max-width: 1000px;
+  margin: 20px auto 0 auto;
+  border: 2px solid #01c389;
+  padding: 10px;
+  border-radius: 20px; /*zaobljeni robovi*/
+}
+
+/*stil za textarea, v katero uporabnik piše*/
+textarea{
+  width: 100%;
+  margin-bottom: 1rem;
+  resize: vertical; /*omogoča spreminjanje velikosti navpično (uporabnik jo spreminja sam)*/
+}
+
+/*za prikaz zakriptiranega sporočila*/
+#kriptogram {
+  color: #01c389;
+  word-break: break-word; /*prelom besed, če je beseda predolga*/
+  white-space: pre-wrap; /*ohranja prelom vrstice in presledke*/
+}
+ 
+/*mali gumb na strani preizkusi se, ostale stvari privzete ze od gumba zgoraj*/
+.mali-gumb {
+  background-color: #01c389;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/*stil za oznake, textarea in input*/
+.kriptacija label,
+.kriptacija textarea,
+.kriptacija input{
+  font-family: "Montserrat", serif; /*pisava*/
+  font-weight: 500;
+}
